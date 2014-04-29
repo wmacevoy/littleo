@@ -230,42 +230,46 @@ f(x)=\frac{x^2+1}{x^2-1}
 \label{fig:algebra1}
 \end{marginfigure}
 
-
 And being asked to show
 \begin{equation*}
     f(x+h)=\frac{x^2+1}{x^2-1}+ \frac{2h\cdot(2x+h)}{(x-1)(x+1)(x+h+1)(x+h-1)}
 \end{equation*}
-and
-\begin{align*}
-  |f(x)|<2 & \text{ if and only if } \\
-           &  x \in (-\infty,-\sqrt{3})\cup(-\frac{1}{\sqrt{3}},+\frac{1}{\sqrt{3}})\cup(+\sqrt{3},+\infty)
-\end{align*}
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/algebra2.pdf}
 \caption{Where $|f(x)|$ is less than $2$.}
 \label{fig:algebra2}
 \end{marginfigure}
-
+and
+\begin{align*}
+  |f(x)|<2 & \text{ if and only if } \\
+           &  x \in (-\infty,-\sqrt{3})\cup(-\frac{1}{\sqrt{3}},+\frac{1}{\sqrt{3}})\cup(+\sqrt{3},+\infty)
+\end{align*}
 should seem (at worst) tedious, but not mysterious.  Neither should the following:
 \begin{equation*}
     2^{\log_3(x)}=x^{\log_2(3)} \,.
 \end{equation*}
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/explog.pdf}
+\caption{How $y=2^x$ and $x=\log_2 y$ are related.}
+\label{fig:explog}
+\end{marginfigure}
+
 If these are mysterious to you, then you need to learn college algebra.
 \section*{Trigonometry is helpful}
 
 Additionally, it would be nice if you have some basic trigonometry, including measuring angles in radians, which is the only unit of angle we care about here.  For example,
+\begin{gather*}
+    (\cos a)^2 +(\sin a)^2 = 1\,,\\
+    \cos a=
+        \frac{1}{2}\text{ if and only if $a=\pm\frac{\pi}{3}+2n$, for some integer $n$}\,,
+\intertext{and}
+    \sin(a+b)=\sin(a) \cos(b)+\cos(a) \sin(b)\,,
+\end{gather*}
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/unitcircle.pdf}
-\caption{$x=\cos a$ and $y=\sin a$ defined on the unit circle in terms of the arc-length $a$ measured counter-clockwise from the $x$-axis.  This is what we mean when an angle is measured in radians, and why there are $2\pi$ radians in a circle.}
+\caption{Defining $\cos a$ and $\sin a$ for radian angle $a$ on the unit circle.}
 \label{fig:unitcircle}
 \end{marginfigure}
-\begin{align*}
-    \cos a&=\pm\sqrt{1-(\sin a)^2}\,,\\
-    \cos a&=
-        \frac{1}{2}\text{ if and only if $x=3+2n$, for some integer $n$}\,,
-\intertext{and}
-    \sin(a+b)&=sin(a)cos(b)+cos(a)sin(b)\,,
-\end{align*}
 should at least be familiar to the point of looking something up to remember the details.
 
 \section*{Reading Tips}

@@ -1,7 +1,15 @@
-all :
-	pdflatex main
-	cd graphics; for f in *.asy; do asy -f pdf $$f; done
+GRAPHICS_ASY=$(wildcard graphics/*.asy)
+GRAPHICS_PDF=$(patsubst graphics/%.asy,graphics/%.pdf,$(GRAPHICS_ASY))
+graphics/%.pdf : graphics/%.asy settings.asy
+	asy -f pdf -o $@ $<
+VIEW=evince
+all : graphics
 	latexmk -pdf main
 
+graphics : $(GRAPHICS_PDF)
+
+graphs : graphics
+	$(VIEW) $(GRAPHICS_PDF)
+
 pdf : all
-	evince main.pdf &
+	$(VIEW) main.pdf

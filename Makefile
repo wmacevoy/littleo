@@ -1,15 +1,15 @@
 GRAPHICS_ASY=$(wildcard graphics/*.asy)
 GRAPHICS_PDF=$(patsubst graphics/%.asy,graphics/%.pdf,$(GRAPHICS_ASY))
-graphics/%.pdf : graphics/%.asy settings.asy
-	asy -f pdf -o $@ $<
 VIEW=evince
-all : graphics
-	latexmk -pdf main
 
-graphics : $(GRAPHICS_PDF)
+graphics/%.pdf : graphics/%.asy
+	asy -f pdf -o $@ $<
 
-graphs : graphics
-	$(VIEW) $(GRAPHICS_PDF)
+all : graphs main.tex preamble.tex basics.tex
+	pdflatex main
+#	latexmk -pdf main
+
+graphs : $(GRAPHICS_PDF)
 
 pdf : all
-	$(VIEW) main.pdf
+	$(VIEW) main.pdf &

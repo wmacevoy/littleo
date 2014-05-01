@@ -86,12 +86,10 @@ Here is a tabular comparison for some small values of  h :
 \begin{table}
 \caption{$2k^3 + 5 k^2 - 7 k + 3$ vs. $2k^3$.}
 \label{tab:basic2}
-\begin{tabular}{|S[table-format=2.6]|S[table-format=1.8]|S[table-format=1.8]|S[table-format=7]|S[table-format=10]|S[table-format=1.5]|}
+\begin{tabular}{|S[table-format=2.6]|c{12em}|S[table-format=1.8]|S[table-format=7]|S[table-format=10]|S[table-format=1.5]|}
 \multicolumn{6}{c}{\vspace{1em}} \\
 \multicolumn{1}{l}{$h$} & 
-\multicolumn{1}{l}{$L=(1+h)^{1/h}$}
-\multicolumn{1}{l}{$R=e2k^3$} & 
-\multicolumn{1}{l}{$E=L-R$} &
+\multicolumn{1}{l}{$\begin{array}{rl}&(1+h)^{1/h}\\-&e\\\hline\&E\end{array}$}
 \multicolumn{1}{l}{$\varepsilon(h)=h^0$} &
 \multicolumn{1}{l}{$r=\left|\frac{E}{\varepsilon(h)}\right| $} \\
 \hline

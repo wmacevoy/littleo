@@ -86,23 +86,20 @@ Here is a tabular comparison for some small values of  h :
 \begin{table}
 \caption{$2k^3 + 5 k^2 - 7 k + 3$ vs. $2k^3$.}
 \label{tab:basic2}
-\begin{tabular}{|S[table-format=2.6]|c{12em}|S[table-format=1.8]|S[table-format=7]|S[table-format=10]|S[table-format=1.5]|}
-\multicolumn{6}{c}{\vspace{1em}} \\
-\multicolumn{1}{l}{$h$} & 
-\multicolumn{1}{l}{$\begin{array}{rl}&(1+h)^{1/h}\\-&e\\\hline\&E\end{array}$}
-\multicolumn{1}{l}{$\varepsilon(h)=h^0$} &
-\multicolumn{1}{l}{$r=\left|\frac{E}{\varepsilon(h)}\right| $} \\
+\begin{tabular}{|S[table-format=2.6]|r|S[table-format=2]|S[table-format=1.8]}
+\multicolumn{4}{c}{\vspace{1em}} \\
+\multicolumn{1}{c}{$h$} & 
+\multicolumn{1}{c}{$\begin{array}{r}(1+h)^{1/h}\\-e\\\hline E\end{array}$} &
+\multicolumn{1}{c}{$\varepsilon(h)=h^1$} &
+\multicolumn{1}{c}{$r=\left|\frac{E}{\varepsilon(h)}\right| $} \\
 \hline
-ε (h) = h 0   E |  
-r = || ε(k)
-|
-2.7182818...  -0.0135  1  0.0135 
-2.718417755  2.7182818...  0.000136  1  0.000136 
-2.718280469  2.7182818...  -0.00000136  1  0.00000136 
-h   L = (1 + h ) 1/h   R = e  
-0.01  2.704813829  -0.0001  0.000001 
-E = L − R   
- 
+0.01 & $\begin{array}{lr}&2.7048\\-2.7183\\\hline\\-0.0135\end{array}$   & 1 & 0.0135 \\
+\hline
+\end{tabular}
+\end{table}
+%-0.0001 & 2.718417755 & 2.7182818...  0.000136  1  0.000136 
+%0.00001 & 2.718280469 & 2.7182818...  -0.00000136  1  0.00000136 
+
 Writing 1 as  h 0 in the  o () may seem surprising, but it is a way of noting what parameter is getting  
 small.   
  

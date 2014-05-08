@@ -1,8 +1,3 @@
 #!/bin/bash
-sudo apt-get install emacs
-sudo apt-get install texlive asymptote 
-sudo apt-get install asymptote 
-sudo apt-get install texlive-latex-extra
-sudo apt-get install texlive-metapost
-sudo apt-get install texlive-fonts-extra
-sudo apt-get install texlive-science
+sudo apt-get -y install emacs git texlive asymptote texlive-latex-extra texlive-metapost texlive-fonts-extra texlive-science
+

@@ -9,14 +9,14 @@ For example, if we say, as  $h \rightarrow 0$ (as $h$ approaches zero),
 
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/basics1.pdf}
-\caption{$(1 + h )^3$ vs.  $1 + 3 h$ for small values of  $h$.}
+\caption{As $h \rightarrow 0$, $(1 + h )^3 = 1 + 3 h + o(h)$.}
 \label{fig:basics1}
 \end{marginfigure}
 We mean that the magnitude of the difference between the left-hand side  $L = (1 + h )^3$ and the  right-hand side $R = 1 + 3 h$  is so small that, even when divided by $h$,  it is still small.
 
 We can check this ratio empirically: 
 \begin{table}
-\caption{$(1 + h )^3$ vs. $1 + 3 h$}
+\caption{As $h \rightarrow 0$, $(1 + h )^3 = 1 + 3 h + o(h)$.}
 \label{tab:basic1}
 \begin{tabular}{|S[table-format=2.3]|S[table-format=2.9]|S[table-format=2.3]|S[table-format=2.11]|S[table-format=2.6]|}
 \multicolumn{1}{l}{$h$} & 
@@ -47,13 +47,12 @@ As  $k \rightarrow \infty$,  $2k^3 + 5 k^2 - 7 k + 3 = 2k^3 + o (k^3 )$.
 This means, as the magnitude of  $k$ gets larger and larger, the cubic polynomial on the left is approximately the leading order term (term with the highest power of  $k$) plus an error small relative to the size of that term.   
 
 \begin{table}
-\caption{$2k^3 + 5 k^2 - 7 k + 3$ vs. $2k^3$.}
+\caption{$2k^3 + 5 k^2 - 7 k + 3=2k^3+o(k^3)$.}
 \label{tab:basic2}
 \begin{tabular}{|S[table-format=4]|S[table-format=10]|S[table-format=10]|S[table-format=7]|S[table-format=10]|S[table-format=1.5]|}
 \multicolumn{6}{c}{\vspace{1em}} \\
 \multicolumn{1}{l}{$k$} & 
-\multicolumn{1}{l}{$\begin{array}{c}L=2k^3+ 5 k^2 \\ - 7 k + 3\end{array}$} & 
-\multicolumn{1}{l}{$R=2k^3$} & 
+\multicolumn{1}{l}{$\begin{array}{c}L=2k^3+ 5 k^2 \\ - 7 k + 3\end{array}$} &\multicolumn{1}{l}{$R=2k^3$} & 
 \multicolumn{1}{l}{$E=L-R$} &
 \multicolumn{1}{l}{$\varepsilon(k)=k^3$} &
 \multicolumn{1}{l}{$r=\left|\frac{E}{\varepsilon(k)}\right| $} \\
@@ -67,54 +66,45 @@ This means, as the magnitude of  $k$ gets larger and larger, the cubic polynomia
 
 Notice how the error $E$ grows, but it is still small when compared to $\varepsilon(k) = k^3$.  
 
-\section{$e$}
-As $h \rightarrow 0$, $(1 + h)^{1/h}=e+o(h^0)$.
+\section{Euler's constant, $e$.}
+Euler's constant $e \approx \num{2.718281828459045}$ is fundamental for exponents and logarithms, just as  $\pi \approx \num{3.141592653589793} $ is fundamental in trigonometry.  It can be thought of as the value approximated by the expression $(1 + h)^{1/h}$ as $h \rightarrow 0$.
 
-This means, as the magnitude of  $h$ gets smaller and smaller, the expression on the left is  
-approximately Euler's constant $e = \num{2.718281828459045}\ldots$, plus an error small relative to $h^0=1$.
+In $o()$ notation\footnote{Writing $1$ as  $h^0$ in the $o(h^0)$ may seem surprising, but it is a way of noting what parameter is getting small.}: as $h \rightarrow 0$, $(1 + h)^{1/h}=e+o(h^0)$.
 
-Just as  $\pi$ plays a fundamental role in trigonometry, $e$ is fundamental for exponents and  
-logarithms. 
-\begin{marginfigure}
-\includegraphics[width=0.75\linewidth]{graphics/e.pdf}
-\caption{$(1 + h )^{1/h}=e+o(h^0)$.}
-\label{fig:basics1}
-\end{marginfigure}
+This means, as the magnitude of  $h$ gets smaller and smaller, the expression on the left is approximately Euler's constant $e = \num{2.718281828459045}\ldots$, plus an error small relative to $h^0=1$.  
  
-Here is a tabular comparison for some small values of  h :  
+Here is a tabular comparison for some small values of $h$:  
  
 \begin{table}
-\caption{$2k^3 + 5 k^2 - 7 k + 3$ vs. $2k^3$.}
-\label{tab:basic2}
-\begin{tabular}{|S[table-format=2.6]|r|S[table-format=2]|S[table-format=1.8]}
-\multicolumn{4}{c}{\vspace{1em}} \\
+\caption{$(1 + h )^{1/h}=e+o(h^0)$.}
+\label{tab:e}
+\begin{tabular}{|S[table-format=2.6]|S[table-format=2.9]|S[table-format=1.8]|}
 \multicolumn{1}{c}{$h$} & 
-\multicolumn{1}{c}{$\begin{array}{r}(1+h)^{1/h}\\-e\\\hline E\end{array}$} &
-\multicolumn{1}{c}{$\varepsilon(h)=h^1$} &
-\multicolumn{1}{c}{$r=\left|\frac{E}{\varepsilon(h)}\right| $} \\
+\multicolumn{1}{c}{$(1+h)^{1/h}$} &
+\multicolumn{1}{c}{$r=\left|\frac{(1+h)^{1/h}-e}{1}\right| $} \\
 \hline
-0.01 & $\begin{array}{lr}&2.7048\\-2.7183\\\hline\\-0.0135\end{array}$   & 1 & 0.0135 \\
+0.01 & 2.704813829 & -0.0135 \\
+-0.0001 & 2.718417755 & 0.000136 \\
+0.000001 & 2.718280469 & 0.00000136 \\
 \hline
 \end{tabular}
 \end{table}
-%-0.0001 & 2.718417755 & 2.7182818...  0.000136  1  0.000136 
-%0.00001 & 2.718280469 & 2.7182818...  -0.00000136  1  0.00000136 
+\vspace{1em}
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/e.pdf}
+\caption{$(1 + h )^{1/h}=e+o(h^0)$.}
+\label{fig:e}
+\end{marginfigure}
+   
+\section{Sine.}
+As  $h \rightarrow  0$,  $\sin(x+h)=\sin(x)+\cos(x)h + o(h)$.    
+ 
+We will show this is true later, but, geometrically, it means that evaluating  $\sin(x)$ near $x$ is approximately a line going through the point  $(x,\sin(x))$ with slope  $\cos(x)$.  
+ 
+Here is a plot of these approximations for $\sin(x)$ at  $x=1$, $2$, and $3$: 
+{\em This last example is really important.}  The idea that, near a given point  $x$,  many functions are well approximated by a line is a foundational idea of differential calculus.  
 
-Writing 1 as  h 0 in the  o () may seem surprising, but it is a way of noting what parameter is getting  
-small.   
- 
-As  h → 0   ,  s in(x + h ) = s in(x) + c os(x)h + o (h) .    
- 
-We will show this is true later, but, geometrically, it means that evaluating  s in(x) near  x is  
-approximately a line going through the point  ( x, s in(x)) with slope  c os(x).  
- 
-Here is a plot of these approximations for  s in(x) at  x = 1 , 2 , and  3 :   
- 
-This last example is really important.  The idea that, near a given point  x ,  many functions  
-are well approximated by a line is a foundational idea of differential calculus.  We call the 
-slope of that approximating  line  f ′ (x) , so that  f (x + h ) = f (x) + f ′ (x)h + o (h) .  For this example, we  
-are saying that, if  f (x) = s in(x) , then  f ′ (x) = c os(x) .  
- 
+We call the slope of that approximating line  $f'(x)$, so that $f(x+h)=f(x)+f'(x)h+o(h)$.  For this example, we are saying that, if $f(x) = \sin(x)$, then  $f'(x)=\cos(x)$.  
  
 Figure 1.  The most important figure in calculus.  For many functions, the value near a given point  x is well approximated by a line called the tangent line of  f (x)  at  x with slope  f ′ (x).     As an  
 equation: as  h → 0 ,   f (x + h ) = f (x) + f ′ (x)h + o (h).     Such functions are called differentiable at  x .  
@@ -207,4 +197,4 @@ h :  there must exist  h ε > 0  so that  ε (h)  is defined (finite) and nonzer
 0 < | h | < h ε .     
 ●  We only use admissible   ε (h)  in these notes.  In particular,  ε (h) = | h | p  is  
 admissible for any value of  p ,  and   ε (h) = h p  is admissible for any integer value of  
-p .  
+p.

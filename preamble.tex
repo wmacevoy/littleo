@@ -1,8 +1,25 @@
 \chapter*{Preamble}
+\marginnote{Stitz-Zeager [\url{www.stitz-zeager.com}] and Boundless [\url{www.boundless.com}] are good backgrounds references.}
+
 The point of these notes is to introduce the main concepts of calculus using what is known as little-$o()$ notation, in the hope to provide a perspective that is simple, expressive, intuitive and correct.
 
 \section*{Algebra is essential}
-\marginnote{Stitz-Zeager [\url{www.stitz-zeager.com}] and Boundless [\url{www.boundless.com}] are good backgrounds references.}
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/algebra1.pdf}
+\caption{$y=f(x)=\frac{x^2+1}{x^2-1}$}
+\label{fig:algebra1}
+\end{marginfigure}
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/algebra2.pdf}
+\caption{Where $|f(x)|$ is less than $2$.}
+\label{fig:algebra2}
+\end{marginfigure}
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/explog.pdf}
+\caption{How $y=e^x$ and $x=\ln y$ are related, where $e \approx 2.72$ is Euler's constant.}
+\label{fig:explog}
+\end{marginfigure}
+
 I assume you are comfortable with algebra, including working with rational algebraic expressions, exponents and logarithms, function notation, absolute values, and inequalities.
 
 For example, seeing 
@@ -10,21 +27,11 @@ For example, seeing
 \begin{equation*}
 f(x)=\frac{x^2+1}{x^2-1}
 \end{equation*}
-\begin{marginfigure}
-\includegraphics[width=0.75\linewidth]{graphics/algebra1.pdf}
-\caption{$y=f(x)=\frac{x^2+1}{x^2-1}$}
-\label{fig:algebra1}
-\end{marginfigure}
 
 And being asked to show
 \begin{equation*}
     f(x+h)=\frac{x^2+1}{x^2-1}+ \frac{2h\cdot(2x+h)}{(x-1)(x+1)(x+h+1)(x+h-1)}
 \end{equation*}
-\begin{marginfigure}
-\includegraphics[width=0.75\linewidth]{graphics/algebra2.pdf}
-\caption{Where $|f(x)|$ is less than $2$.}
-\label{fig:algebra2}
-\end{marginfigure}
 and
 \begin{align*}
   |f(x)|<2 & \text{ if and only if } \\
@@ -34,11 +41,6 @@ should seem (at worst) tedious, but not mysterious.  Neither should the followin
 \begin{equation*}
     2^{\log_3(x)}=x^{\log_2(3)} \,.
 \end{equation*}
-\begin{marginfigure}
-\includegraphics[width=0.75\linewidth]{graphics/explog.pdf}
-\caption{How $y=e^x$ and $x=\ln y$ are related, where $e \approx 2.72$ is Euler's constant.}
-\label{fig:explog}
-\end{marginfigure}
 
 If these are mysterious to you, then you need to learn college algebra.
 \section*{Trigonometry is helpful}

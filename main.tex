@@ -27,6 +27,9 @@
 
 \hypersetup{colorlinks} % Comment this line if you don't wish to have colored links
 \usepackage{amsmath}
+\usepackage{sudoku}
+\renewcommand*\sudokuformat[1]{\sffamily #1}
+\newenvironment{smallsudoku}{\setlength\sudokusize{12em}\setlength\sudokuthickline{1.5pt}\setlength\sudokuthinline{0.5pt}\begin{sudoku}}{\end{sudoku}}
 \usepackage{siunitx} % align decimals in tables
 \usepackage{nth}     % 1st, 2nd, ...
 \usepackage{microtype} % Improves character and word spacing

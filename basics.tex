@@ -9,14 +9,14 @@ For example, if we say, as  $h \rightarrow 0$ (as $h$ approaches zero),
 
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/basics1.pdf}
-\caption{As $h \rightarrow 0$, $(1 + h )^3 = 1 + 3 h + o(h)$.}
+\caption{$(1 + h )^3 = 1 + 3 h + o(h)$.}
 \label{fig:basics1}
 \end{marginfigure}
 We mean that the magnitude of the difference between the left-hand side  $L = (1 + h )^3$ and the  right-hand side $R = 1 + 3 h$  is so small that, even when divided by $h$,  it is still small.
 
 We can check this ratio empirically: 
 \begin{table}
-\caption{As $h \rightarrow 0$, $(1 + h )^3 = 1 + 3 h + o(h)$.}
+\caption{$(1 + h )^3 = 1 + 3 h + o(h)$.}
 \label{tab:basic1}
 \begin{tabular}{|S[table-format=2.3]|S[table-format=2.9]|S[table-format=2.3]|S[table-format=2.11]|S[table-format=2.6]|}
 \multicolumn{1}{l}{$h$} & 
@@ -83,30 +83,34 @@ Here is a tabular comparison for some small values of $h$:
 \multicolumn{1}{c}{$(1+h)^{1/h}$} &
 \multicolumn{1}{c}{$r=\left|\frac{(1+h)^{1/h}-e}{1}\right| $} \\
 \hline
-0.01 & 2.704813829 & -0.0135 \\
+0.01 & 2.704813829 & 0.0135 \\
 -0.0001 & 2.718417755 & 0.000136 \\
 0.000001 & 2.718280469 & 0.00000136 \\
 \hline
 \end{tabular}
 \end{table}
-\vspace{1em}
+\vspace{4em}
 \begin{marginfigure}
-\includegraphics[width=0.75\linewidth]{graphics/e.pdf}
+\includegraphics{graphics/e.pdf}
 \caption{$(1 + h )^{1/h}=e+o(h^0)$.}
 \label{fig:e}
 \end{marginfigure}
    
 \section{Sine.}
-As  $h \rightarrow  0$,  $\sin(x+h)=\sin(x)+\cos(x)h + o(h)$.    
+As $h \rightarrow 0$,  $\sin(x+h)=\sin(x)+\cos(x)h + o(h)$.    
+\begin{marginfigure}
+\includegraphics{graphics/sine.pdf}
+\caption{$\sin(x+h)=\sin(x)+\cos(x) h+o(h)$ for $x=1$ and $\pi$.}
+\label{fig:sine}
+\end{marginfigure}
  
 We will show this is true later, but, geometrically, it means that evaluating  $\sin(x)$ near $x$ is approximately a line going through the point  $(x,\sin(x))$ with slope  $\cos(x)$.  
- 
-Here is a plot of these approximations for $\sin(x)$ at  $x=1$, $2$, and $3$: 
+
 {\em This last example is really important.}  The idea that, near a given point  $x$,  many functions are well approximated by a line is a foundational idea of differential calculus.  
 
 We call the slope of that approximating line  $f'(x)$, so that $f(x+h)=f(x)+f'(x)h+o(h)$.  For this example, we are saying that, if $f(x) = \sin(x)$, then  $f'(x)=\cos(x)$.  
  
-Figure 1.  The most important figure in calculus.  For many functions, the value near a given point  x is well approximated by a line called the tangent line of  f (x)  at  x with slope  f ′ (x).     As an  
+The most important figure in calculus.  For many functions, the value near a given point  x is well approximated by a line called the tangent line of  f (x)  at  x with slope  f ′ (x).     As an  
 equation: as  h → 0 ,   f (x + h ) = f (x) + f ′ (x)h + o (h).     Such functions are called differentiable at  x .  
  
 Always writing “as  h → 0 "  is tedious.  It will be clear from the  o ()  notation which parameter we  

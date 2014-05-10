@@ -13,3 +13,6 @@ graphs : $(GRAPHICS_PDF)
 
 pdf : all
 	$(VIEW) main.pdf &
+
+qqwing : qqwing.cpp
+	$(CXX) -g -o $@ $<

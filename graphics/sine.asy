@@ -1,6 +1,6 @@
 import graph;
 import math;
-//defaultpen(fontsize(8pt));
+defaultpen(fontsize(8pt));
 // size(3cm,0);
 unitsize(1cm);
 

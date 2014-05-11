@@ -2,28 +2,27 @@
 
 Little-$o()$ notation is used to denote that some expression is small relative to some other value.
 
-For example, if we say, as  $h \rightarrow 0$ (as $h$ approaches zero),  
-\begin{equation} 
-(1 + h)^3 = 1 + 3 h + o(h)\,.
-\end{equation}
-
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/basics1.pdf}
 \caption{$(1 + h )^3 = 1 + 3 h + o(h)$.}
 \label{fig:basics1}
 \end{marginfigure}
-We mean that the magnitude of the difference between the left-hand side  $L = (1 + h )^3$ and the  right-hand side $R = 1 + 3 h$  is so small that, even when divided by $h$,  it is still small.
+For example, if we say, as $h$ approaches $0$,
+\begin{equation*}
+(1 + h)^3 = 1 + 3 h + o(h)\,.
+\end{equation*}
+We mean that, as the magnitude of $h$ gets smaller, the magnitude of the difference between the left-hand side  $L = (1 + h )^3$ and the  right-hand side $R = 1 + 3 h$  is so small that, even when divided by $h$,  it is still small.
 
 We can check this ratio empirically: 
 \begin{table}
-\caption{$(1 + h )^3 = 1 + 3 h + o(h)$.}
+\caption[][0em]{$(1 + h )^3 = 1 + 3 h + o(h)$.}
 \label{tab:basic1}
 \begin{tabular}{|S[table-format=2.3]|S[table-format=2.9]|S[table-format=2.3]|S[table-format=2.11]|S[table-format=2.6]|}
-\multicolumn{1}{l}{$h$} & 
-\multicolumn{1}{l}{$L = (1 + h )^3$} & 
-\multicolumn{1}{l}{$R = 1 + 3 h$} & 
-\multicolumn{1}{l}{$E = L - R$} &
-\multicolumn{1}{l}{$r = \left| \frac{E}{h} \right| $} \\
+\multicolumn{1}{c}{$h$} & 
+\multicolumn{1}{c}{$L=(1+h)^3$} & 
+\multicolumn{1}{c}{$R=1+3h$} & 
+\multicolumn{1}{c}{$E=L-R$} &
+\multicolumn{1}{c}{$r=\left|\frac{E}{h}\right|$} \\
 \hline
 0.1  & 1.331 & 1.3 & 0.031 & 0.31 \\
 \hline
@@ -34,10 +33,18 @@ We can check this ratio empirically:
 \end{tabular}
 \end{table}
 
-Notice how the ratio  $r=|E/h|$ shrinks as the magnitude of  
-$h$ shrinks.  When we say an expression  $E$  is 
-$o(h)$ as  $h \rightarrow 0$,  we mean the magnitude of $|E/h|$  gets small as the magnitude of $h$ gets small.  
- 
+Notice how the ratio  $r=|E/h|$ shrinks as the magnitude of $h$ shrinks.  When we say an expression  $E$  is $o(h)$ as  $h \rightarrow 0$,  we mean the magnitude of $|E/h|$  gets small as the magnitude of $h$ gets small.
+
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/basics2.pdf}
+\caption{As $k \rightarrow \infty$, $2k^3+5k^2-7k+3=2k^3+o(k^3)$.  Note how similar the curves are for large $k$.}
+\label{fig:basics2}
+\end{marginfigure}
+\begin{marginfigure}
+\includegraphics[width=0.75\linewidth]{graphics/basics3.pdf}
+\caption{As $k \rightarrow \infty$, $2k^3+5k^2-7k+3=2k^3+o(k^3)$.  Note how dissimilar the curves are for small $k$.}
+\label{fig:basics2}
+\end{marginfigure}
 The  $o()$  notation allows for more general expressions for the relative comparison of smallness,  such as  $o(h^2)$ or  $o(h \ln(h))$. In each case, we are saying that the expression in question is small in magnitude when divided by the expression in the $o()$  as the parameter ($h$ in this case) gets small in magnitude.
 
 Here are some other examples to help get the idea.  You should check these with a calculator or spreadsheet.  We give a formal definition of the notation at the end of this section. 
@@ -104,9 +111,14 @@ As $h \rightarrow 0$,  $\sin(x+h)=\sin(x)+\cos(x)h + o(h)$.
 \label{fig:sine}
 \end{marginfigure}
  
-We will show this is true later, but, geometrically, it means that evaluating  $\sin(x)$ near $x$ is approximately a line going through the point  $(x,\sin(x))$ with slope  $\cos(x)$.  
+We will show this is true later, but, geometrically, it means that evaluating  $y=\sin(x)$ near $x$ is approximately a line\footnote{A line going through the point $(x_0,y_0)$ with slope $m$ is $y=y_0+m \cdot (x-x_0)$.} going through the point  $(x,\sin(x))$ with slope  $\cos(x)$.  
 
 {\em This last example is really important.}  The idea that, near a given point  $x$,  many functions are well approximated by a line is a foundational idea of differential calculus.  
+\begin{figure}
+% \includegraphics{graphics/calc.pdf}
+\caption{$\sin(x+h)=\sin(x)+\cos(x) h+o(h)$ for $x=1$ and $\pi$.}
+\label{fig:calc}
+\end{figure}
 
 We call the slope of that approximating line  $f'(x)$, so that $f(x+h)=f(x)+f'(x)h+o(h)$.  For this example, we are saying that, if $f(x) = \sin(x)$, then  $f'(x)=\cos(x)$.  
  

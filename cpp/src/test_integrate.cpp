@@ -70,11 +70,20 @@ mpf_class norm3(const mpf_class &x) {
   return abs(x);
 }
 
-mpf_class f3(const mpf_class &x)
-{
-  ++evals;
-  return sqrt(x+1);
-}
+struct F3 {
+  mpf_class a;
+  F3(const mpf_class &_a) : a(_a) {}
+  mpf_class operator()(const mpf_class &x) const {
+    ++evals;
+    return sqrt(x+a);
+  }
+};
+
+//mpf_class f3(const mpf_class &x)
+//{
+//  ++evals;
+//  return sqrt(x+1);
+//}
 
 double norm4(const std::vector<double> &x) {
   return maxnorm(x);
@@ -94,20 +103,22 @@ std::vector<double> f4(const double &x)
 int main()
 {
   evals=0;
-  double ans1 = integrate(f1,norm1,0.0,1.0,1e-6,1.0,53);
+  double ans1 = integrate<double,double,decltype(f1),decltype(norm1)>(f1,norm1,0.0,1.0,1e-6,1.0,53);
   std::cout << "ans1=" << std::setprecision(6) << ans1 << " evals=" << evals << std::endl;
 
   evals=0;
-  C ans2  = integrate(f2,norm2,0.0,1.0,1e-6,1.0,53);
+  C ans2  = integrate<double,C,decltype(f2),decltype(norm2)>(f2,norm2,0.0,1.0,1e-6,1.0,53);
   std::cout << "ans2=" << std::setprecision(6) << ans2 << " evals=" << evals << std::endl;
 
   evals=0;
-  mpf_class ans3  = integrate(f3,norm3,mpf_class(0.0,128),mpf_class(0.5,128),
-                              mpf_class(1e-20),mpf_class(1.0),128);
+  F3 f3(mpf_class(1));
+  mpf_class ans3  = integrate<mpf_class,mpf_class,decltype(f3),decltype(norm3)>
+    (f3,norm3,mpf_class(0.0,128),mpf_class(0.5,128),mpf_class(1e-20),mpf_class(1.0),128);
   std::cout << "ans3=" << std::setprecision(30) << ans3 << " evals=" << evals << std::endl;
 
   evals=0;
-  std::vector<double> ans4  = integrate(f4,norm4,0.0,1.0,1e-10,1.0,53);
+  std::vector<double> ans4  = integrate<double,std::vector<double>,decltype(f4),decltype(norm4)>
+    (f4,norm4,0.0,1.0,1e-10,1.0,53);
   std::cout << "ans4=[" << std::setprecision(10);
   for (size_t i=0; i<ans4.size(); ++i) {
     if (i > 0) std::cout << ", ";

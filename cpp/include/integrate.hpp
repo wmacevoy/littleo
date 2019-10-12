@@ -43,9 +43,9 @@ public:
   }
 };
 
-template <typename X, typename Y>
-Y integrate(Y (*f)(const X &), X (*norm)(const Y &), const X &a, const X &b, const X &errmax, const X &hmax, int dmax)
+template <typename X, typename Y, typename F, typename Norm>
+Y integrate(F &f, Norm &norm, const X &a, const X &b, const X &errmax, const X &hmax, int dmax)
 {
-  integrate_recursive<X,Y,Y (*)(const X &),X (*)(const Y &)> ir(f,norm,a,b,errmax,hmax,dmax);
+  integrate_recursive<X,Y,F,Norm> ir(f,norm,a,b,errmax,hmax,dmax);
   return ir.recursive(a,b,f(a),f(b),0);
 }

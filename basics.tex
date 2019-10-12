@@ -4,14 +4,14 @@ Little-$o()$ notation is used to denote that some expression is small relative t
 
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/basics1.pdf}
-\caption{$(1 + h )^3 = 1 + 3 h + o(h)$ as $h \rightarrow 0$.}
+\caption[$(1 + h )^3 = 1 + 3 h + o(h)$ as $h \rightarrow 0$.]{$(1 + h )^3 = 1 + 3 h + o(h)$ as $h \rightarrow 0$.  Notice how the curves are {\em tangent} (touch and align) at $h=0$.}
 \label{fig:basics1}
 \end{marginfigure}
 For example, if we say:
 \begin{equation*}
 (1 + h)^3 = 1 + 3 h + o(h)\text{\ as\ }h \rightarrow 0\,.
 \end{equation*}
-We mean that, as the magnitude of $h$ gets smaller, the magnitude of the difference between the left-hand side  $L = (1 + h )^3$ and the  right-hand side $R = 1 + 3 h$  is so small that, even when divided by $h$,  it is still small.
+We mean that, as the magnitude of $h$ gets smaller, the magnitude of the difference between the left-hand side  $L = (1 + h )^3$ and the  right-hand side $R = 1 + 3 h$  is so small that, even when divided by $h$,  it is still small.  
 
 We can check this ratio empirically: 
 \begin{table}
@@ -35,6 +35,8 @@ We can check this ratio empirically:
 
 Notice how the ratio  $r=|E/h|$ shrinks as the magnitude of $h$ shrinks.  When we say an expression  $E$  is $o(h)$ as  $h \rightarrow 0$,  we mean the magnitude of $|E/h|$  gets small as the magnitude of $h$ gets small.
 
+Graphically, smooth expressions that differ by $o(h)$ are {\em tangent} (touch and align) at $h=0$.  This is illustrated for this example in figure~\ref{fig:basics1}.
+
 \begin{marginfigure}
 \includegraphics[width=0.75\linewidth]{graphics/basics2.pdf}
 \caption{$2k^3+5k^2-7k+3=2k^3+o(k^3)$ as $k \rightarrow \infty$.  Note how similar the curves are for large magnitude $k$.}
@@ -46,8 +48,6 @@ Notice how the ratio  $r=|E/h|$ shrinks as the magnitude of $h$ shrinks.  When w
 \label{fig:basics3}
 \end{marginfigure}
 The  $o()$  notation allows for more general expressions for the relative comparison of smallness,  such as  $o(h^2)$ or  $o(h \ln(h))$. In each case, we are saying that the expression in question is small in magnitude when divided by the expression in the $o()$  as the parameter ($h$ in this case) gets small in magnitude.
-
-Here are some other examples to help get the idea\footnote{You should check these with a spreadsheet.  Did you skip this reading tips?}.  We give a formal definition of the notation at the end of this section. 
 
 The notation works for large parameters as well.  For example: 
 \begin{equation}
@@ -76,13 +76,15 @@ This means, as the magnitude of  $k$ gets larger and larger, the cubic polynomia
 \section{Euler's constant, $e$.}
 Euler's constant $e \approx \num{2.718281828459045}$ is fundamental for exponents and logarithms, just as  $\pi \approx \num{3.141592653589793} $ is fundamental in trigonometry.  
 
-The value $e$ can be thought of as the value of the expression $(1 + h)^{1/h}$ as $h \rightarrow 0$.  In $o()$ notation\footnote{Writing $1$ as  $h^0$ in the $o(h^0)$ may seem surprising, but it is a way of noting what parameter is getting small.}: 
+The value $e$ can be thought of as the value of the expression $(1 + h)^{1/h}$ as $h \rightarrow 0$.  In $o()$ notation\footnote{Writing $1$ as  $h^0$ in $o(h^0)$ may seem surprising, but it is a way of noting what parameter is getting small.}: 
 
 \begin{equation}
 (1 + h)^{1/h}=e+o(h^0)\text{\ as\ } h \rightarrow 0\,.
 \end{equation}
 
-This means, as the magnitude of  $h$ gets smaller and smaller, the expression on the left is approximately $e$, plus an error small relative to $h^0=1$.  Figure~\ref{fig:e} and table~\ref{tab:e} demonstrate this.
+This means, as the magnitude of  $h$ gets smaller and smaller, the expression on the left is approximately $e$, plus an error small relative to $h^0=1$.  Figure~\ref{fig:e} and table~\ref{tab:e} demonstrate this.  Notice $(1 + h )^{1/h}$ is not defined for $h=0$, but we only care about small {\em nonzero} values of $h$.
+
+Curves that differ by $o(h^0)$ need only try to touch at $h=0$ (unlike $o(h)$ errors, where they need to be tangent).
  
 \begin{table}
 \caption{$(1 + h )^{1/h}=e+o(h^0)$.}
@@ -101,7 +103,7 @@ This means, as the magnitude of  $h$ gets smaller and smaller, the expression on
 \vspace{4em}
 \begin{marginfigure}
 \includegraphics{graphics/e.pdf}
-\caption{$(1 + h )^{1/h}=e+o(h^0)$.}
+\caption[$(1 + h )^{1/h}=e+o(h^0)$]{$(1 + h )^{1/h}=e+o(h^0)$.  Notice the curves only try to touch (instead of be tangent) at $h=0$.}
 \label{fig:e}
 \end{marginfigure}
    
@@ -120,9 +122,26 @@ We will show this is true later, but, geometrically, it means that evaluating  $
 \caption[Differential calculus.]{Differential calculus in a nutshell: often, the value of $f(x)$ near $x$ is approximately a line: $f(x+h)=f(x)+f'(x)h+o(h)\,$.}
 \label{fig:calc}
 \end{figure}
-{\em This last example is really important.}  The idea that, near a given point  $x$,  many functions are well approximated by a line is a foundational idea of differential calculus.  We call the slope of that approximating line  $f'(x)$, so that $f(x+h)=f(x)+f'(x)h+o(h)$.  For the example of figure~\ref{fig:sine}, we are saying that, if $f(x) = \sin(x)$, then  $f'(x)=\cos(x)$.  
- 
-Always writing ``as  $h \rightarrow 0$'' is tedious.  It will be clear from the $o()$ notation which parameter we consider large or small. 
+{\em This last example is really important.}  The idea that, near a given point  $x$,  many functions are well approximated by a line is a foundational idea of differential calculus.  We call such a function differentiable at $x$, and the slope of its tangent line  $f'(x)$, so that $f(x+h)=f(x)+f'(x)h+o(h)$.  For the example of figure~\ref{fig:sine}, we are saying that, if $f(x) = \sin(x)$, then  $f'(x)=\cos(x)$.  
+
+\marginnote{Always writing ``as  $h \rightarrow 0$'' is tedious.  It will be clear from the $o()$ notation which parameter we consider large or small.}
+
+In general, $o(h^0)$ approximations touch at $h=0$, $o(h^1)$ approximations have the same tangent (best fitting line), and $o(h^2)$ approximations have the same curvature (best fitting circle).  Figure~\ref{fig:rates} illustrates this with approximations of $e^h$.
+\begin{figure}
+\begin{center}
+\includegraphics[width=4in]{graphics/rates.pdf}
+\end{center}
+\caption[Comparing $o(h^p)$]{Three progressively better approximations of $e^h$ as $h \rightarrow 0$: 
+
+$e^h=1+o(h^0)$, 
+
+$e^h=1+h+o(h^1)$, and 
+
+$e^h=1+h+\frac{h^2}{2}+o(h^2)$. 
+
+Notice the $o(h^0)=o(1)$ approximation touches, the $o(h^1)=o(h)$ approximation is tangent (best fitting line), and the $o(h^2)$ approximation has the same curvature (best fitting circle) at $h=0$.}
+\label{fig:rates}
+\end{figure}
 
 \section{Formalities}
 \begin{figure}
@@ -155,6 +174,9 @@ Little-$o()$ notation is a way of describing an expression as small in compariso
   $E$ is $o(\varepsilon(h))$ as $h \rightarrow 0$ means the ratio  $r = |E/\varepsilon(h)|$  can be made as small as desired provided the magnitude of $h$ is small enough (but not zero).
 \end{quote}
 
+\item 
+Graphically, expressions that differ by $o(h^0)$ need to touch at $h=0$, but expressions that differ by $o(h^1)$ also need to be tangent at $h=0$.
+
 \item
 Specifically,  $E$ is $o(\varepsilon(h))$  as $h \rightarrow 0$  means:  
 \begin{quote} 
@@ -165,19 +187,26 @@ For any  $r_b > 0$,  there exists $h_b > 0$,  so that:
 \end{quote}
 
 \item 
-$E$ is $o(\varepsilon(k)$ as $k \rightarrow \infty$ means
+$E$ is $o(\varepsilon(k))$ as $k \rightarrow \infty$ means
 \begin{quote}
 $E$ is $o(\varepsilon(1/h)$ as $h \rightarrow 0$.
+\end{quote}
+or
+\begin{quote} 
+For any  $r_b > 0$,  there exists $k_b > 0$,  so that:
+\begin{equation*}
+\text{if\ } |k| > k_b\,,\text{\ then\ }r=\left|\frac{E}{\varepsilon(h)}\right|<r_b\,.
+\end{equation*}
 \end{quote}
 
 \item 
 For differentiable functions, the value $f(x+h)$ near a given point $x$ is well  approximated by a line called the tangent line of $y=f(x)$  at $x$ with slope $f'(x)$.
 
-\item ${(1+h)}^{(1/h)} = e + o(h^0)$ as $h \rightarrow 0$,  where  $e \approx 2.718$ is Euler’s constant.
+\item ${(1+h)}^{(1/h)} = e + o(h^0)$ as $h \rightarrow 0$,  where  $e \approx 2.718$ is Euler's constant.
 
 \item Because an expression $E$ is divided by $\varepsilon(h)$ in the definition of $o(\varepsilon(h))$, $\varepsilon(h)$  is admissible in $o(\varepsilon(h))$ notation only if it is defined and nonzero for small enough nonzero $h$.
 \begin{quote}
-For $\varepsilon(h)$ to be admissable in $o(\varepsilon(h))$, there must exist $h_0 > 0$ so that $\varepsilon(h)$ is defined (finite) and nonzero for $0 < | h | < h_0$.
+For $\varepsilon(h)$ to be admissible in $o(\varepsilon(h))$, there must exist $h_0 > 0$ so that $\varepsilon(h)$ is defined (finite) and nonzero for $0 < | h | < h_0$.
 \end{quote}
 
 \item We only use admissible $\varepsilon(h)$ in these notes.  In particular,  $\varepsilon(h) = {|h|}^p$ is admissible for any value of $p$,  and $\varepsilon(h) = h^p$ is admissible for any integer value of $p$.

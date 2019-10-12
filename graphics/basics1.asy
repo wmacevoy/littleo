@@ -35,5 +35,8 @@ draw(graph(g,cond=boundg,-X,X,operator ..),dashed);
 labpath((0.25,3.5),0.4,f,"$y=(1+h)^3$",NW);
 labpath((0.5,1.5),0.4,g,"$y=1+3h$",SE);
 
+draw((0,0)--(0,f(0)),dotted);
+draw((0,f(0))--(-X,f(0)),dotted);
+
 xaxis("$h$",Bottom,LeftTicks(Label(fontsize(8pt)),new real[]{-X,0,X}));
 yaxis("$y$",Left,RightTicks(Label(fontsize(8pt)),new real[]{1-2*X,1-X,1,1+X,1+2*X,1+3*X}));
